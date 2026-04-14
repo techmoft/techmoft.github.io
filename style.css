@@ -15,20 +15,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* =========================
-   GLOBAL FIX (IMPORTANT)
-========================= */
 html, body {
   overflow-x: hidden;
 }
 
 /* =========================
-   PAGE HEADINGS (GLOBAL)
+   TITLES (KEEP BLUE)
 ========================= */
 .container h1,
 .container h2,
 .container h3 {
-  color: #0071BC; /* CHANGED ONLY */
+  color: #60a5fa;
 }
 
 /* =========================
@@ -37,8 +34,10 @@ html, body {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #2a2f36 0%, #1c1f26 60%); /* CHANGED ONLY */
-  color: #e5e7eb; /* CHANGED ONLY */
+
+  background: radial-gradient(circle at top, #111c33 0%, #0f172a 60%);
+
+  color: #f97316; /* ORANGE BODY TEXT */
 
   display: flex;
   flex-direction: column;
@@ -51,26 +50,13 @@ body {
 }
 
 /* =========================
-   ANIMATION
-========================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
    TRUST BAR
 ========================= */
 .trust-bar {
+  color: #f97316;
   text-align: center;
   font-size: 12px;
-  color: #9ca3af; /* CHANGED ONLY */
+
   padding: 8px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   background: rgba(255,255,255,0.02);
@@ -79,267 +65,56 @@ body {
 /* =========================
    HEADER
 ========================= */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 10px 16px;
-  background: #16181d; /* CHANGED ONLY */
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-  cursor: pointer;
-}
-
-.nav {
-  display: flex;
-  gap: 12px;
-  margin-left: auto;
-}
-
 .nav a {
-  color: #e5e7eb; /* CHANGED ONLY */
-  text-decoration: none;
-  font-size: 14px;
+  color: #f97316;
 }
 
 .nav a:hover {
-  color: #0071BC; /* CHANGED ONLY */
+  color: #60a5fa;
 }
 
 /* =========================
-   EMAIL HIGHLIGHT
+   EMAIL (LIGHT BLUE)
 ========================= */
 .email {
-  color: #B6D6F4; /* CHANGED ONLY */
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.email:hover {
-  text-decoration: underline;
-  opacity: 0.9;
+  color: #93c5fd;
 }
 
 /* =========================
    HERO
 ========================= */
-.hero {
-  text-align: center;
-  padding: 10px var(--space-md) 20px;
-}
-
-.hero h1 {
-  font-size: 28px;
-  margin-bottom: var(--space-sm);
-  color: #0071BC; /* CHANGED ONLY */
-}
-
 .hero p {
-  color: #9ca3af; /* CHANGED ONLY */
-  max-width: 600px;
-  margin: auto;
-
-  padding: 0 10px;
-  box-sizing: border-box;
-
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  white-space: normal;
+  color: #f97316;
 }
 
 /* =========================
-   DESKTOP GRID (UNCHANGED)
-========================= */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-md);
-
-  padding: var(--space-md);
-  max-width: 900px;
-  margin: auto;
-}
-
-/* =========================
-   CARD (UNCHANGED BEHAVIOR)
+   CARD TEXT (ORANGE)
 ========================= */
 .card {
-  background: rgba(255,255,255,0.03); /* unchanged */
-  border: 1px solid rgba(255,255,255,0.06); /* unchanged */
-  border-radius: var(--radius-md);
-
-  padding: var(--space-md);
-  transition: all 0.25s ease;
-
-  animation: fadeIn 0.9s ease-out;
-
-  text-align: center;
+  color: #f97316;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0,113,188,0.5); /* CHANGED ONLY */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
+/* =========================
+   CARD TITLES (BLUE)
+========================= */
 .card h3 {
-  color: #0071BC; /* CHANGED ONLY */
-  margin-top: 0;
+  color: #60a5fa;
 }
 
+/* =========================
+   LINKS / ARROWS
+========================= */
 .card a {
-  color: #e5e7eb; /* CHANGED ONLY */
-  text-decoration: none;
+  color: #f97316;
 }
 
 .card a:hover {
-  color: #B6D6F4; /* CHANGED ONLY */
-}
-
-/* =========================
-   CARD GLOW EFFECT (COLORS ONLY)
-========================= */
-.card {
-  position: relative;
-  box-shadow: 0 0 0 rgba(182,214,244,0);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  border-radius: inherit;
-
-  background: radial-gradient(
-    circle at top,
-    rgba(182,214,244,0.15),
-    transparent 70%
-  );
-
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.card:hover {
-  box-shadow:
-    0 0 12px rgba(182,214,244,0.4),
-    0 0 30px rgba(0,113,188,0.25);
-
-  border-color: rgba(0,113,188,0.6);
-}
-
-.card:active {
-  box-shadow:
-    0 0 10px rgba(182,214,244,0.5),
-    0 0 20px rgba(0,113,188,0.3);
-}
-
-/* =========================
-   CONTENT
-========================= */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-  flex: 1;
+  color: #60a5fa;
 }
 
 /* =========================
    FOOTER
 ========================= */
 footer {
-  text-align: center;
-  font-size: var(--text-small);
-  color: #9ca3af; /* CHANGED ONLY */
-  padding: var(--space-lg) 0;
-
-  border-top: 1px solid rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.01);
-
-  margin-top: auto;
-}
-
-@media (max-width: 600px) {
-
-  body {
-    font-size: 16px;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px 12px;
-  }
-
-  .logo {
-    width: 130px;
-    margin: 0;
-  }
-
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: flex-end;
-    gap: 8px;
-
-    width: 100%;
-    margin-top: 6px;
-  }
-
-  .nav a {
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  .card-grid {
-    display: flex;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    gap: var(--space-md);
-    padding: var(--space-md);
-
-    -webkit-overflow-scrolling: touch;
-
-    align-items: stretch;
-  }
-
-  .card {
-    flex: 0 0 75%;
-    max-width: 280px;
-
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: anywhere;
-
-    margin: 0;
-    transform: none !important;
-  }
-
-  .card-grid::-webkit-scrollbar {
-    display: none;
-  }
+  color: #f97316;
 }

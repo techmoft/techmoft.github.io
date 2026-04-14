@@ -15,12 +15,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* =========================
+   GLOBAL FIX
+========================= */
 html, body {
   overflow-x: hidden;
 }
 
 /* =========================
-   TITLES (KEEP BLUE)
+   PAGE HEADINGS
 ========================= */
 .container h1,
 .container h2,
@@ -37,7 +40,7 @@ body {
 
   background: radial-gradient(circle at top, #111c33 0%, #0f172a 60%);
 
-  color: #f97316; /* ORANGE BODY TEXT */
+  color: #f97316;
 
   display: flex;
   flex-direction: column;
@@ -50,13 +53,26 @@ body {
 }
 
 /* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
    TRUST BAR
 ========================= */
 .trust-bar {
-  color: #f97316;
   text-align: center;
   font-size: 12px;
-
+  color: #f97316;
   padding: 8px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   background: rgba(255,255,255,0.02);
@@ -65,8 +81,31 @@ body {
 /* =========================
    HEADER
 ========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 16px;
+  background: #0b1220;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
 .nav a {
   color: #f97316;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .nav a:hover {
@@ -74,38 +113,95 @@ body {
 }
 
 /* =========================
-   EMAIL (LIGHT BLUE)
+   EMAIL
 ========================= */
 .email {
   color: #93c5fd;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.email:hover {
+  text-decoration: underline;
+  opacity: 0.9;
 }
 
 /* =========================
    HERO
 ========================= */
-.hero p {
-  color: #f97316;
+.hero {
+  text-align: center;
+  padding: 10px var(--space-md) 20px;
 }
 
-/* =========================
-   CARD TEXT (ORANGE)
-========================= */
-.card {
-  color: #f97316;
-}
-
-/* =========================
-   CARD TITLES (BLUE)
-========================= */
-.card h3 {
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: var(--space-sm);
   color: #60a5fa;
 }
 
+.hero p {
+  color: #f97316;
+  max-width: 600px;
+  margin: auto;
+
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
 /* =========================
-   LINKS / ARROWS
+   DESKTOP GRID
 ========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: auto;
+}
+
+/* =========================
+   CARD (STABLE)
+========================= */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+
+  padding: var(--space-md);
+  transition: all 0.25s ease;
+
+  animation: fadeIn 0.9s ease-out;
+
+  text-align: center;
+
+  color: #f97316;
+}
+
+/* KEEP YOUR MOVEMENT */
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96,165,250,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* CARD TITLE */
+.card h3 {
+  color: #60a5fa;
+  margin-top: 0;
+}
+
+/* CARD LINKS */
 .card a {
   color: #f97316;
+  text-decoration: none;
 }
 
 .card a:hover {
@@ -113,8 +209,148 @@ body {
 }
 
 /* =========================
+   CARD GLOW (UNCHANGED STRUCTURE)
+========================= */
+.card {
+  position: relative;
+  box-shadow: 0 0 0 rgba(96,165,250,0);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(96,165,250,0.15),
+    transparent 70%
+  );
+
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card:hover {
+  box-shadow:
+    0 0 12px rgba(96,165,250,0.4),
+    0 0 30px rgba(96,165,250,0.25);
+
+  border-color: rgba(96,165,250,0.6);
+}
+
+.card:active {
+  box-shadow:
+    0 0 10px rgba(96,165,250,0.5),
+    0 0 20px rgba(96,165,250,0.3);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  flex: 1;
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer {
+  text-align: center;
+  font-size: var(--text-small);
   color: #f97316;
+
+  padding: var(--space-lg) 0;
+
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.01);
+
+  margin-top: auto;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 12px;
+  }
+
+  .logo {
+    width: 130px;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .card-grid {
+    display: flex;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    gap: var(--space-md);
+    padding: var(--space-md);
+
+    -webkit-overflow-scrolling: touch;
+
+    align-items: stretch;
+  }
+
+  .card {
+    flex: 0 0 75%;
+    max-width: 280px;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+
+    margin: 0;
+    transform: none !important;
+  }
+
+  .card-grid::-webkit-scrollbar {
+    display: none;
+  }
 }

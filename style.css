@@ -15,29 +15,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* =========================
-   GLOBAL FIX (IMPORTANT)
-========================= */
 html, body {
   overflow-x: hidden;
 }
 
 /* =========================
-   PAGE HEADINGS (GLOBAL)
+   PAGE HEADINGS (DEEP BLUE)
 ========================= */
 .container h1,
 .container h2,
 .container h3 {
-  color: #60a5fa;
+  color: #0071BC; /* MOFT deep blue */
 }
+
 /* =========================
-   BASE
+   BASE (GREY TECH BACKGROUND)
 ========================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #111c33 0%, #0f172a 60%);
-  color: #e2e8f0;
+
+  background: radial-gradient(circle at top, #2a2f36 0%, #1c1f26 60%);
+  color: #e5e7eb;
 
   display: flex;
   flex-direction: column;
@@ -49,9 +48,7 @@ body {
   animation: fadeIn 0.6s ease-out;
 }
 
-/* =========================
-   ANIMATION
-========================= */
+/* ========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -67,56 +64,31 @@ body {
    TRUST BAR
 ========================= */
 .trust-bar {
-  text-align: center;
-  font-size: 12px;
-  color: #94a3b8;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.02);
+  color: #9ca3af;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
 }
 
 /* =========================
-   HEADER (NEW SAFE ADDITION)
+   HEADER
 ========================= */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 10px 16px;
-  background: #0b1220;
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-  cursor: pointer;
-}
-
-.nav {
-  display: flex;
-  gap: 12px;
-  margin-left: auto;
+  background: #16181d;
 }
 
 .nav a {
-  color: #e2e8f0;
-  text-decoration: none;
-  font-size: 14px;
+  color: #e5e7eb;
 }
 
 .nav a:hover {
-  color: #60a5fa;
+  color: #0071BC;
 }
 
 /* =========================
-   EMAIL HIGHLIGHT (CLICKABLE)
+   EMAIL (LIGHT BLUE)
 ========================= */
 .email {
-  color: #60a5fa;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.2s ease;
+  color: #B6D6F4; /* TECH light */
 }
 
 .email:hover {
@@ -125,235 +97,75 @@ body {
 }
 
 /* =========================
-   HERO (FIXED TEXT OVERFLOW)
+   HERO
 ========================= */
-.hero {
-  text-align: center;
-  padding: 10px var(--space-md) 20px;
-}
-
 .hero h1 {
-  font-size: 28px;
-  margin-bottom: var(--space-sm);
-  color: #60a5fa; /* ADDED */
+  color: #0071BC;
 }
 
 .hero p {
-  color: #94a3b8;
-  max-width: 600px;
-  margin: auto;
-
-  padding: 0 10px;
-  box-sizing: border-box;
-
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  white-space: normal;
+  color: #9ca3af;
 }
 
 /* =========================
-   DESKTOP GRID (STABLE)
-========================= */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-md);
-
-  padding: var(--space-md);
-  max-width: 900px;
-  margin: auto;
-}
-
-/* =========================
-   CARD
+   CARD (UNIQUE LIGHT BLUE)
 ========================= */
 .card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-md);
-
-  padding: var(--space-md);
-  transition: all 0.25s ease;
-
-  animation: fadeIn 0.9s ease-out;
-
-  text-align: center;
+  background: rgba(182,214,244,0.06); /* soft TECH tint */
+  border: 1px solid rgba(182,214,244,0.18);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(96,165,250,0.5);
+  border-color: rgba(0,113,188,0.6);
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .card h3 {
-  color: #60a5fa; /* CONFIRMED BLUE */
-  margin-top: 0;
+  color: #0071BC;
 }
 
 .card a {
-  color: #e2e8f0;
-  text-decoration: none;
+  color: #e5e7eb;
 }
 
 .card a:hover {
-  color: #60a5fa;
+  color: #B6D6F4;
 }
 
 /* =========================
-   CARD GLOW EFFECT
+   CARD GLOW (SUBTLE, UNIQUE)
 ========================= */
 .card {
-  position: relative;
-
-  /* existing styles remain */
-
-  box-shadow: 0 0 0 rgba(96,165,250,0); /* base (no glow) */
+  box-shadow: 0 0 0 rgba(182,214,244,0);
 }
 
-/* SOFT AMBIENT GLOW */
 .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  border-radius: inherit;
-
   background: radial-gradient(
     circle at top,
-    rgba(96,165,250,0.15),
+    rgba(182,214,244,0.18),
     transparent 70%
   );
-
-  opacity: 0.6;
-  pointer-events: none;
 }
 
-/* HOVER GLOW (DESKTOP) */
 .card:hover {
   box-shadow:
-    0 0 12px rgba(96,165,250,0.4),
-    0 0 30px rgba(96,165,250,0.25);
+    0 0 10px rgba(182,214,244,0.4),
+    0 0 25px rgba(0,113,188,0.25);
 
-  border-color: rgba(96,165,250,0.6);
+  border-color: rgba(0,113,188,0.7);
 }
 
-/* OPTIONAL: SLIGHT INTENSITY ON ACTIVE (MOBILE TAP) */
 .card:active {
   box-shadow:
-    0 0 10px rgba(96,165,250,0.5),
-    0 0 20px rgba(96,165,250,0.3);
-}
-
-/* =========================
-   CONTENT
-========================= */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
-  flex: 1;
+    0 0 8px rgba(182,214,244,0.5),
+    0 0 18px rgba(0,113,188,0.3);
 }
 
 /* =========================
    FOOTER
 ========================= */
 footer {
-  text-align: center;
-  font-size: var(--text-small);
-  color: #64748b;
-  padding: var(--space-lg) 0;
-
-  border-top: 1px solid rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.01);
-
-  margin-top: auto;
-}
-
-@media (max-width: 600px) {
-
-  /* =========================
-     BASE MOBILE TYPOGRAPHY
-  ========================= */
-  body {
-    font-size: 16px;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  /* =========================
-     MOBILE HEADER FIX (SAFE LAYOUT)
-  ========================= */
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px 12px;
-  }
-
-  .logo {
-    width: 130px;
-    margin: 0;
-  }
-
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: flex-end;
-    gap: 8px;
-
-    width: 100%;
-    margin-top: 6px;
-  }
-
-  .nav a {
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  /* =========================
-     SWIPE CAROUSEL (UNCHANGED)
-  ========================= */
-  .card-grid {
-    display: flex;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    gap: var(--space-md);
-    padding: var(--space-md);
-
-    -webkit-overflow-scrolling: touch;
-
-    align-items: stretch;
-  }
-
-  .card {
-    flex: 0 0 75%;
-    max-width: 280px;
-
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: anywhere;
-
-    margin: 0;
-    transform: none !important;
-  }
-
-  .card-grid::-webkit-scrollbar {
-    display: none;
-  }
+  color: #9ca3af;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
 }

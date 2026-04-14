@@ -1,0 +1,359 @@
+:root {
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+
+  --radius-md: 16px;
+
+  --text-base: 16px;
+  --text-small: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   GLOBAL FIX (IMPORTANT)
+========================= */
+html, body {
+  overflow-x: hidden;
+}
+
+/* =========================
+   PAGE HEADINGS (GLOBAL)
+========================= */
+.container h1,
+.container h2,
+.container h3 {
+  color: #60a5fa;
+}
+/* =========================
+   BASE
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #111c33 0%, #0f172a 60%);
+  color: #e2e8f0;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  font-size: var(--text-base);
+  line-height: 1.6;
+
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TRUST BAR
+========================= */
+.trust-bar {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.02);
+}
+
+/* =========================
+   HEADER (NEW SAFE ADDITION)
+========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 16px;
+  background: #0b1220;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: #60a5fa;
+}
+
+/* =========================
+   EMAIL HIGHLIGHT (CLICKABLE)
+========================= */
+.email {
+  color: #60a5fa;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.email:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+/* =========================
+   HERO (FIXED TEXT OVERFLOW)
+========================= */
+.hero {
+  text-align: center;
+  padding: 10px var(--space-md) 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: var(--space-sm);
+  color: #60a5fa; /* ADDED */
+}
+
+.hero p {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: auto;
+
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* =========================
+   DESKTOP GRID (STABLE)
+========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: auto;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+
+  padding: var(--space-md);
+  transition: all 0.25s ease;
+
+  animation: fadeIn 0.9s ease-out;
+
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96,165,250,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.card h3 {
+  color: #60a5fa; /* CONFIRMED BLUE */
+  margin-top: 0;
+}
+
+.card a {
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: #60a5fa;
+}
+
+/* =========================
+   CARD GLOW EFFECT
+========================= */
+.card {
+  position: relative;
+
+  /* existing styles remain */
+
+  box-shadow: 0 0 0 rgba(96,165,250,0); /* base (no glow) */
+}
+
+/* SOFT AMBIENT GLOW */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(96,165,250,0.15),
+    transparent 70%
+  );
+
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* HOVER GLOW (DESKTOP) */
+.card:hover {
+  box-shadow:
+    0 0 12px rgba(96,165,250,0.4),
+    0 0 30px rgba(96,165,250,0.25);
+
+  border-color: rgba(96,165,250,0.6);
+}
+
+/* OPTIONAL: SLIGHT INTENSITY ON ACTIVE (MOBILE TAP) */
+.card:active {
+  box-shadow:
+    0 0 10px rgba(96,165,250,0.5),
+    0 0 20px rgba(96,165,250,0.3);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  flex: 1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  font-size: var(--text-small);
+  color: #64748b;
+  padding: var(--space-lg) 0;
+
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.01);
+
+  margin-top: auto;
+}
+
+@media (max-width: 600px) {
+
+  /* =========================
+     BASE MOBILE TYPOGRAPHY
+  ========================= */
+  body {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* =========================
+     MOBILE HEADER FIX (SAFE LAYOUT)
+  ========================= */
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 12px;
+  }
+
+  .logo {
+    width: 130px;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* =========================
+     SWIPE CAROUSEL (UNCHANGED)
+  ========================= */
+  .card-grid {
+    display: flex;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    gap: var(--space-md);
+    padding: var(--space-md);
+
+    -webkit-overflow-scrolling: touch;
+
+    align-items: stretch;
+  }
+
+  .card {
+    flex: 0 0 75%;
+    max-width: 280px;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+
+    margin: 0;
+    transform: none !important;
+  }
+
+  .card-grid::-webkit-scrollbar {
+    display: none;
+  }
+}

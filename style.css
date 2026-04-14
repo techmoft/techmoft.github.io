@@ -16,19 +16,19 @@ html {
 }
 
 /* =========================
-   GLOBAL FIX
+   GLOBAL FIX (IMPORTANT)
 ========================= */
 html, body {
   overflow-x: hidden;
 }
 
 /* =========================
-   PAGE HEADINGS
+   PAGE HEADINGS (GLOBAL)
 ========================= */
 .container h1,
 .container h2,
 .container h3 {
-  color: #60a5fa;
+  color: #60a5fa; /* BLUE TITLES */
 }
 
 /* =========================
@@ -40,7 +40,7 @@ body {
 
   background: radial-gradient(circle at top, #111c33 0%, #0f172a 60%);
 
-  color: #f97316;
+  color: #f97316; /* ORANGE BODY TEXT */
 
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@ body {
 }
 
 /* =========================
-   HEADER
+   HEADER (NEW SAFE ADDITION)
 ========================= */
 .header {
   display: flex;
@@ -113,10 +113,10 @@ body {
 }
 
 /* =========================
-   EMAIL
+   EMAIL HIGHLIGHT (CLICKABLE)
 ========================= */
 .email {
-  color: #93c5fd;
+  color: #93c5fd; /* LIGHT BLUE */
   font-weight: bold;
   text-decoration: none;
   transition: 0.2s ease;
@@ -128,7 +128,7 @@ body {
 }
 
 /* =========================
-   HERO
+   HERO (FIXED TEXT OVERFLOW)
 ========================= */
 .hero {
   text-align: center;
@@ -138,11 +138,11 @@ body {
 .hero h1 {
   font-size: 28px;
   margin-bottom: var(--space-sm);
-  color: #60a5fa;
+  color: #60a5fa; /* BLUE TITLE */
 }
 
 .hero p {
-  color: #f97316;
+  color: #f97316; /* ORANGE BODY TEXT */
   max-width: 600px;
   margin: auto;
 
@@ -155,7 +155,7 @@ body {
 }
 
 /* =========================
-   DESKTOP GRID
+   DESKTOP GRID (STABLE)
 ========================= */
 .card-grid {
   display: grid;
@@ -168,7 +168,7 @@ body {
 }
 
 /* =========================
-   CARD (STABLE)
+   CARD
 ========================= */
 .card {
   background: rgba(255,255,255,0.03);
@@ -182,25 +182,22 @@ body {
 
   text-align: center;
 
-  color: #f97316;
+  color: #f97316; /* IMPORTANT: RESTORES CARD TEXT */
 }
 
-/* KEEP YOUR MOVEMENT */
 .card:hover {
   transform: translateY(-6px);
   border-color: rgba(96,165,250,0.5);
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* CARD TITLE */
 .card h3 {
-  color: #60a5fa;
+  color: #60a5fa; /* BLUE CARD TITLES */
   margin-top: 0;
 }
 
-/* CARD LINKS */
 .card a {
-  color: #f97316;
+  color: #f97316; /* ORANGE TEXT */
   text-decoration: none;
 }
 
@@ -209,10 +206,11 @@ body {
 }
 
 /* =========================
-   CARD GLOW (UNCHANGED STRUCTURE)
+   CARD GLOW EFFECT
 ========================= */
 .card {
   position: relative;
+
   box-shadow: 0 0 0 rgba(96,165,250,0);
 }
 
@@ -273,9 +271,6 @@ footer {
   margin-top: auto;
 }
 
-/* =========================
-   MOBILE
-========================= */
 @media (max-width: 600px) {
 
   body {

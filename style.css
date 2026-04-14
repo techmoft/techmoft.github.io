@@ -28,17 +28,16 @@ html, body {
 .container h1,
 .container h2,
 .container h3 {
-  color: #0071BC; /* deep blue */
+  color: #60a5fa;
 }
-
 /* =========================
    BASE
 ========================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #2a2f36 0%, #1c1f26 60%); /* grey tech */
-  color: #e5e7eb;
+  background: radial-gradient(circle at top, #111c33 0%, #0f172a 60%);
+  color: #e2e8f0;
 
   display: flex;
   flex-direction: column;
@@ -70,14 +69,14 @@ body {
 .trust-bar {
   text-align: center;
   font-size: 12px;
-  color: #9ca3af;
+  color: #94a3b8;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.02);
 }
 
 /* =========================
-   HEADER
+   HEADER (NEW SAFE ADDITION)
 ========================= */
 .header {
   display: flex;
@@ -85,7 +84,7 @@ body {
   align-items: center;
 
   padding: 10px 16px;
-  background: #16181d;
+  background: #0b1220;
 }
 
 .logo {
@@ -101,20 +100,20 @@ body {
 }
 
 .nav a {
-  color: #e5e7eb;
+  color: #e2e8f0;
   text-decoration: none;
   font-size: 14px;
 }
 
 .nav a:hover {
-  color: #0071BC;
+  color: #60a5fa;
 }
 
 /* =========================
-   EMAIL
+   EMAIL HIGHLIGHT (CLICKABLE)
 ========================= */
 .email {
-  color: #B6D6F4; /* light blue */
+  color: #60a5fa;
   font-weight: bold;
   text-decoration: none;
   transition: 0.2s ease;
@@ -126,7 +125,7 @@ body {
 }
 
 /* =========================
-   HERO
+   HERO (FIXED TEXT OVERFLOW)
 ========================= */
 .hero {
   text-align: center;
@@ -136,11 +135,11 @@ body {
 .hero h1 {
   font-size: 28px;
   margin-bottom: var(--space-sm);
-  color: #0071BC;
+  color: #60a5fa; /* ADDED */
 }
 
 .hero p {
-  color: #9ca3af;
+  color: #94a3b8;
   max-width: 600px;
   margin: auto;
 
@@ -153,7 +152,7 @@ body {
 }
 
 /* =========================
-   DESKTOP GRID
+   DESKTOP GRID (STABLE)
 ========================= */
 .card-grid {
   display: grid;
@@ -169,8 +168,8 @@ body {
    CARD
 ========================= */
 .card {
-  background: rgba(182,214,244,0.06); /* unique light blue */
-  border: 1px solid rgba(182,214,244,0.18);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius-md);
 
   padding: var(--space-md);
@@ -183,22 +182,22 @@ body {
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(0,113,188,0.6);
+  border-color: rgba(96,165,250,0.5);
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .card h3 {
-  color: #0071BC;
+  color: #60a5fa; /* CONFIRMED BLUE */
   margin-top: 0;
 }
 
 .card a {
-  color: #e5e7eb;
+  color: #e2e8f0;
   text-decoration: none;
 }
 
 .card a:hover {
-  color: #B6D6F4;
+  color: #60a5fa;
 }
 
 /* =========================
@@ -206,9 +205,13 @@ body {
 ========================= */
 .card {
   position: relative;
-  box-shadow: 0 0 0 rgba(182,214,244,0);
+
+  /* existing styles remain */
+
+  box-shadow: 0 0 0 rgba(96,165,250,0); /* base (no glow) */
 }
 
+/* SOFT AMBIENT GLOW */
 .card::before {
   content: "";
   position: absolute;
@@ -218,7 +221,7 @@ body {
 
   background: radial-gradient(
     circle at top,
-    rgba(182,214,244,0.18),
+    rgba(96,165,250,0.15),
     transparent 70%
   );
 
@@ -226,18 +229,20 @@ body {
   pointer-events: none;
 }
 
+/* HOVER GLOW (DESKTOP) */
 .card:hover {
   box-shadow:
-    0 0 12px rgba(182,214,244,0.4),
-    0 0 30px rgba(0,113,188,0.25);
+    0 0 12px rgba(96,165,250,0.4),
+    0 0 30px rgba(96,165,250,0.25);
 
-  border-color: rgba(0,113,188,0.7);
+  border-color: rgba(96,165,250,0.6);
 }
 
+/* OPTIONAL: SLIGHT INTENSITY ON ACTIVE (MOBILE TAP) */
 .card:active {
   box-shadow:
-    0 0 10px rgba(182,214,244,0.5),
-    0 0 20px rgba(0,113,188,0.3);
+    0 0 10px rgba(96,165,250,0.5),
+    0 0 20px rgba(96,165,250,0.3);
 }
 
 /* =========================
@@ -256,11 +261,99 @@ body {
 footer {
   text-align: center;
   font-size: var(--text-small);
-  color: #9ca3af;
+  color: #64748b;
   padding: var(--space-lg) 0;
 
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.01);
 
   margin-top: auto;
+}
+
+@media (max-width: 600px) {
+
+  /* =========================
+     BASE MOBILE TYPOGRAPHY
+  ========================= */
+  body {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* =========================
+     MOBILE HEADER FIX (SAFE LAYOUT)
+  ========================= */
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 12px;
+  }
+
+  .logo {
+    width: 130px;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* =========================
+     SWIPE CAROUSEL (UNCHANGED)
+  ========================= */
+  .card-grid {
+    display: flex;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    gap: var(--space-md);
+    padding: var(--space-md);
+
+    -webkit-overflow-scrolling: touch;
+
+    align-items: stretch;
+  }
+
+  .card {
+    flex: 0 0 75%;
+    max-width: 280px;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+
+    margin: 0;
+    transform: none !important;
+  }
+
+  .card-grid::-webkit-scrollbar {
+    display: none;
+  }
 }

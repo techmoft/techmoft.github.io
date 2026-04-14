@@ -15,27 +15,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* =========================
+   GLOBAL FIX (IMPORTANT)
+========================= */
 html, body {
   overflow-x: hidden;
 }
 
 /* =========================
-   PAGE HEADINGS (DEEP BLUE)
+   PAGE HEADINGS (GLOBAL)
 ========================= */
 .container h1,
 .container h2,
 .container h3 {
-  color: #0071BC; /* MOFT deep blue */
+  color: #0071BC; /* deep blue */
 }
 
 /* =========================
-   BASE (GREY TECH BACKGROUND)
+   BASE
 ========================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-
-  background: radial-gradient(circle at top, #2a2f36 0%, #1c1f26 60%);
+  background: radial-gradient(circle at top, #2a2f36 0%, #1c1f26 60%); /* grey tech */
   color: #e5e7eb;
 
   display: flex;
@@ -48,7 +50,9 @@ body {
   animation: fadeIn 0.6s ease-out;
 }
 
-/* ========================= */
+/* =========================
+   ANIMATION
+========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -64,7 +68,10 @@ body {
    TRUST BAR
 ========================= */
 .trust-bar {
+  text-align: center;
+  font-size: 12px;
   color: #9ca3af;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.03);
 }
@@ -73,11 +80,30 @@ body {
    HEADER
 ========================= */
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 16px;
   background: #16181d;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
 }
 
 .nav a {
   color: #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .nav a:hover {
@@ -85,10 +111,13 @@ body {
 }
 
 /* =========================
-   EMAIL (LIGHT BLUE)
+   EMAIL
 ========================= */
 .email {
-  color: #B6D6F4; /* TECH light */
+  color: #B6D6F4; /* light blue */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
 .email:hover {
@@ -99,33 +128,73 @@ body {
 /* =========================
    HERO
 ========================= */
+.hero {
+  text-align: center;
+  padding: 10px var(--space-md) 20px;
+}
+
 .hero h1 {
+  font-size: 28px;
+  margin-bottom: var(--space-sm);
   color: #0071BC;
 }
 
 .hero p {
   color: #9ca3af;
+  max-width: 600px;
+  margin: auto;
+
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
 }
 
 /* =========================
-   CARD (UNIQUE LIGHT BLUE)
+   DESKTOP GRID
+========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: auto;
+}
+
+/* =========================
+   CARD
 ========================= */
 .card {
-  background: rgba(182,214,244,0.06); /* soft TECH tint */
+  background: rgba(182,214,244,0.06); /* unique light blue */
   border: 1px solid rgba(182,214,244,0.18);
+  border-radius: var(--radius-md);
+
+  padding: var(--space-md);
+  transition: all 0.25s ease;
+
+  animation: fadeIn 0.9s ease-out;
+
+  text-align: center;
 }
 
 .card:hover {
+  transform: translateY(-6px);
   border-color: rgba(0,113,188,0.6);
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .card h3 {
   color: #0071BC;
+  margin-top: 0;
 }
 
 .card a {
   color: #e5e7eb;
+  text-decoration: none;
 }
 
 .card a:hover {
@@ -133,39 +202,65 @@ body {
 }
 
 /* =========================
-   CARD GLOW (SUBTLE, UNIQUE)
+   CARD GLOW EFFECT
 ========================= */
 .card {
+  position: relative;
   box-shadow: 0 0 0 rgba(182,214,244,0);
 }
 
 .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
   background: radial-gradient(
     circle at top,
     rgba(182,214,244,0.18),
     transparent 70%
   );
+
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .card:hover {
   box-shadow:
-    0 0 10px rgba(182,214,244,0.4),
-    0 0 25px rgba(0,113,188,0.25);
+    0 0 12px rgba(182,214,244,0.4),
+    0 0 30px rgba(0,113,188,0.25);
 
   border-color: rgba(0,113,188,0.7);
 }
 
 .card:active {
   box-shadow:
-    0 0 8px rgba(182,214,244,0.5),
-    0 0 18px rgba(0,113,188,0.3);
+    0 0 10px rgba(182,214,244,0.5),
+    0 0 20px rgba(0,113,188,0.3);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  flex: 1;
 }
 
 /* =========================
    FOOTER
 ========================= */
 footer {
+  text-align: center;
+  font-size: var(--text-small);
   color: #9ca3af;
+  padding: var(--space-lg) 0;
+
   border-top: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.02);
+
+  margin-top: auto;
 }
